@@ -9,7 +9,9 @@ public class IHM
         Console.WriteLine("1. Afficher les billets");
         Console.WriteLine("2. Acheter un billet");
         Console.WriteLine("3. Afficher les billets achetés");
-        Console.WriteLine("4. Quitter");
+        Console.WriteLine("4. Creer un client");
+        Console.WriteLine("5. Creer un événement");
+        Console.WriteLine("6. Quitter");
     }
     
     public void AfficherBillets(List<Billet> billets)
@@ -61,4 +63,46 @@ public class IHM
         
         client.ReserverBillet(evenement, numeroPlace, categorie);
     }
+    
+    public void AjouterClient()
+    {
+        Console.WriteLine("Entrez l'âge du client :");
+        int age = Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("Entrez le nom du client :");
+        string nom = Console.ReadLine();
+        
+        Console.WriteLine("Entrez le prénom du client :");
+        string prenom = Console.ReadLine();
+        
+        Console.WriteLine("Entrez l'adresse du client :");
+        string adresse = Console.ReadLine();
+        
+        Console.WriteLine("Entrez le téléphone du client :");
+        string telephone = Console.ReadLine();
+        
+        Client client = new Client(age, nom, prenom, adresse, telephone);
+    }
+    
+    public void AjouterEvenement()
+    {
+        Console.WriteLine("Entrez le nom de l'événement :");
+        string nom = Console.ReadLine();
+        
+        Console.WriteLine("Entrez le lieu de l'événement :");
+        string lieu = Console.ReadLine();
+        
+        Console.WriteLine("Entrez la date de l'événement :");
+        DateTime date = Convert.ToDateTime(Console.ReadLine());
+        
+        Console.WriteLine("Entrez l'heure de l'événement :");
+        DateTime heure = Convert.ToDateTime(Console.ReadLine());
+        
+        Console.WriteLine("Entrez le nombre de places de l'événement :");
+        int nombrePlace = Convert.ToInt32(Console.ReadLine());
+        
+        Lieu lieuObj = new Lieu(lieu, "France", 20);
+        Evenement evenement = new Evenement(nom, lieuObj, date, heure, nombrePlace);
+    }
+    
 }

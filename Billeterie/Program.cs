@@ -48,6 +48,30 @@ while (continuer)
             ihm.AfficherBilletsAchetes(clients[choixClient]);
             break;
         case "4":
+            Console.WriteLine("Entrez l'âge du client :");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Entrez le nom du client :");
+            string nom = Console.ReadLine();
+            Console.WriteLine("Entrez le prénom du client :");
+            string prenom = Console.ReadLine();
+            Console.WriteLine("Entrez l'adresse du client :");
+            string adresse = Console.ReadLine();
+            Console.WriteLine("Entrez le téléphone du client :");
+            string telephone = Console.ReadLine();
+            clients.Add(new Client(age, nom, prenom, adresse, telephone));
+            break;
+        case "5":
+            Console.WriteLine("Entrez le nom de l'événement :");
+            string nomEvent = Console.ReadLine();
+            Console.WriteLine("Entrez le lieu de l'événement :");
+            string lieu = Console.ReadLine();
+            Console.WriteLine("Entrez la date de l'événement :");
+            DateTime date = Convert.ToDateTime(Console.ReadLine());
+            Console.WriteLine("Entrez l'heure de l'événement :");
+            DateTime heure = Convert.ToDateTime(Console.ReadLine());
+            evenements.Add(new Evenement(nomEvent, new Lieu(lieu, "France", 20), date, heure, 100));
+            break;
+        case "6":
             continuer = false;
             break;
         default:
